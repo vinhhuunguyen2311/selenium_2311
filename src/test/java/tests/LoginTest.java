@@ -49,4 +49,17 @@ public class LoginTest extends BaseTest {
         boolean hasError = lgp.isErrorDisplayed();
         Assert.assertTrue(hasError);
     }
+    @Test
+    public void testLoginWithWrongPW(){
+        LoginPage lgp = new LoginPage(driver);
+        lgp.login(VALID_USERNAME, INVALID_PASSWORD);
+
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        boolean hasError = lgp.isErrorDisplayed();
+        Assert.assertTrue(hasError);
+    }
 }
