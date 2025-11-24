@@ -72,6 +72,18 @@ public class LoginTest extends BaseTest {
             throw new RuntimeException(e);
         }
         Assert.assertFalse(lgp.getCurrentUrl().contains("dashboard"));
-        boolean hasErrorRequired = lgp.isRequiredDisplay();
+        boolean hasErrorRequired = lgp.isRequiredDisplayUserName();
+    }
+    @Test
+    public void testLoginWithoutPassword(){
+        LoginPage lgp = new LoginPage(driver);
+        lgp.login(VALID_USERNAME, "");
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        Assert.assertFalse(lgp.getCurrentUrl().contains("dashboard"));
+        boolean hasErrorRequired = lgp.isRequiredDisplayPassword();
     }
 }

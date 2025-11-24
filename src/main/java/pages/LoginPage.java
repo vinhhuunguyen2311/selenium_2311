@@ -17,8 +17,10 @@ public class LoginPage {
     private By loginBt = By.xpath("//button[@type='submit']");
     //error msg co tren web
     private By errorMSG = By.xpath("//div[@role='alert']");
-    //error msg reuired cua username
-    private By errorMSGUserName = By.xpath("//span[text()='Required']\n");
+    //error msg required cua username
+    private By errorMSGUserName = By.xpath("//input[@name='username']/parent::div/following-sibling::span[text()='Required']\n");
+    //error msg required cua password
+    private By errorMSGPassword = By.xpath("//input[@name='password']/parent::div/following-sibling::span[text()='Required']\n");
     //endpoint cua page
     private String loginUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
 
@@ -83,10 +85,19 @@ public class LoginPage {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
-    //ham verify required
-    public boolean isRequiredDisplay(){
+    //ham verify required tai field username
+    public boolean isRequiredDisplayUserName(){
         try {
             WebElement requiredElement = driver.findElement(errorMSGUserName);
+            return requiredElement.isDisplayed();
+        }catch (Exception e){
+            return false;
+        }
+    }
+    //ham verify required tai field username
+    public boolean isRequiredDisplayPassword(){
+        try {
+            WebElement requiredElement = driver.findElement(errorMSGPassword);
             return requiredElement.isDisplayed();
         }catch (Exception e){
             return false;
