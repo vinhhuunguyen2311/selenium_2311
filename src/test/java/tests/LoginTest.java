@@ -85,5 +85,6 @@ public class LoginTest extends BaseTest {
         }
         Assert.assertFalse(lgp.getCurrentUrl().contains("dashboard"));
         boolean hasErrorRequired = lgp.isRequiredDisplayPassword();
+        Assert.assertTrue(lgp.getCurrentUrl().contains("/login"));
     }
 }
