@@ -85,22 +85,20 @@ public class LoginPage {
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
     }
-    //ham verify required tai field username
-    public boolean isRequiredDisplayUserName(){
+    //ham verify required
+    public boolean isRequiredDisplay(By locator){
         try {
-            WebElement requiredElement = driver.findElement(errorMSGUserName);
-            return requiredElement.isDisplayed();
-        }catch (Exception e){
-            return false;
+            return driver.findElement(locator).isDisplayed();
+        } catch (Exception e) {
+           return false;
         }
     }
     //ham verify required tai field username
-    public boolean isRequiredDisplayPassword(){
-        try {
-            WebElement requiredElement = driver.findElement(errorMSGPassword);
-            return requiredElement.isDisplayed();
-        }catch (Exception e){
-            return false;
-        }
+    public boolean isRequiredUserName(){
+        return isRequiredDisplay(errorMSGUserName);
+    }
+    //ham verify required tai field username
+    public boolean isRequiredPassword(){
+        return isRequiredDisplay(errorMSGPassword);
     }
 }
