@@ -22,7 +22,7 @@ public class ExtentReportManager {
             String timestamp = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
 
             // tao duong dan luu file
-            String reportPath = System.getProperty("user.dir") + "/" + ConfigReader.getReportPath() + "/Report_" + timestamp + ".html";
+            String reportPath = System.getProperty("user.dir") + "/" + ConfigReader.getReportPath() + "/Report_" + ".html";
 
             // tao extent spark reporter
             ExtentSparkReporter sparkReporter = new ExtentSparkReporter(reportPath);
