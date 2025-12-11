@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import utils.ConfigReader;
 
 public class LoginPage {
     //define attribute
@@ -18,11 +19,11 @@ public class LoginPage {
     //error msg co tren web
     private By errorMSG = By.xpath("//div[@role='alert']");
     //error msg required cua username
-    private By errorMSGUserName = By.xpath("//input[@name='username']/parent::div/following-sibling::span[text()='Required']\n");
+    private By errorMSGUserName = By.xpath("//input[@name='username']/parent::div/following-sibling::span[text()='Required']");
     //error msg required cua password
-    private By errorMSGPassword = By.xpath("//input[@name='password']/parent::div/following-sibling::span[text()='Required']\n");
+    private By errorMSGPassword = By.xpath("//input[@name='password']/parent::div/following-sibling::span[text()='Required']");
     //endpoint cua page
-    private String loginUrl = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+    private String loginUrl = ConfigReader.getLoginUrl();
 
     //ham khoi tao
     public LoginPage(WebDriver driver) {
