@@ -1,0 +1,20 @@
+# URL ung dung
+login.url=https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+
+dashboard.url=https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+
+
+# thong tin dang nhap
+valid.username=Admin
+valid.pw=admin123
+
+invalid.username=wrongname
+invalid.pw=wrongpw
+
+# cau hinh driver
+browser=chrome
+implicit.wait=10
+
+# cau hinh extent report
+report.path=test-output
+report.name=OrangeHRM Test Output

@@ -4,14 +4,15 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import utils.BaseTest;
+import utils.ConfigReader;
 
 public class LoginTest extends BaseTest {
     //static final: tao hang so, khong thay doi duoc, dung chung cho cac testcase
-    private static final String VALID_USERNAME = "Admin";
-    private static final String VALID_PASSWORD = "admin123";
+    private static final String VALID_USERNAME = ConfigReader.getAdminUsername();
+    private static final String VALID_PASSWORD = ConfigReader.getAdminPass();
 
-    private static final String INVALID_USERNAME = "wrongusername";
-    private static final String INVALID_PASSWORD = "wrongpassword";
+    private static final String INVALID_USERNAME = ConfigReader.getInvalidUsername();
+    private static final String INVALID_PASSWORD = ConfigReader.getInvalidPass();
 
     //viet testcase
     @Test
